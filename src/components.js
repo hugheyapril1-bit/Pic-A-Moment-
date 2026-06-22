@@ -1,16 +1,16 @@
 const headerHTML = `
 <header>
   <div class="container">
-    <a href="/" class="logo">Snap<span>Cabin</span></a>
+    <a href="index.html" class="logo">Snap<span>Cabin</span></a>
     <div class="menu-toggle" id="mobile-menu-btn">☰</div>
     <nav id="nav-menu">
       <ul>
-        <li><a href="/" id="nav-home">Home</a></li>
-        <li><a href="/packages.html" id="nav-packages">Packages</a></li>
-        <li><a href="/gallery.html" id="nav-gallery">Gallery</a></li>
-        <li><a href="/how-it-works.html" id="nav-how">How It Works</a></li>
-        <li><a href="/about.html" id="nav-about">About</a></li>
-        <li><a href="/contact.html" class="btn-book">Book Now</a></li>
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="packages.html" id="nav-packages">Packages</a></li>
+        <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+        <li><a href="how-it-works.html" id="nav-how">How It Works</a></li>
+        <li><a href="about.html" id="nav-about">About</a></li>
+        <li><a href="contact.html" class="btn-book">Book Now</a></li>
       </ul>
     </nav>
   </div>
@@ -28,10 +28,10 @@ const footerHTML = `
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/packages.html">Packages</a></li>
-          <li><a href="/gallery.html">Gallery</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -72,7 +72,7 @@ export function initLayout() {
   const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '/' && href === '/index.html')) {
+    if (currentPath.endsWith(href) || (currentPath.endsWith('/') && href === 'index.html')) {
       link.classList.add('active');
     }
   });
